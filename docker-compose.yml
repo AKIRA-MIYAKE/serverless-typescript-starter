@@ -2,8 +2,8 @@ version: '2'
 
 services:
   serverless:
-    build: ./
-    ports:
-      - "8000:8000"
+    build: ./dockerfiles/serverless
+    env_file:
+      - ${ENV_FILE}
     volumes:
-      - ./:/starter
+      - ./:/serverless-app
