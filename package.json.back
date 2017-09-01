@@ -1,0 +1,21 @@
+{
+  "name": "serverless-typescript-starter",
+  "version": "0.0.2",
+  "description": "Serverless framework with TypeScript starter kit",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd sample && serverless webpack serve --host 0.0.0.0",
+    "test": "mocha --compilers ts:espower-typescript/guess ./test/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKIRA-MIYAKE/serverless-typescript-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AKIRA-MIYAKE/serverless-typescript-starter/issues"
+  },
+  "homepage": "https://github.com/AKIRA-MIYAKE/serverless-typescript-starter#readme"
+}

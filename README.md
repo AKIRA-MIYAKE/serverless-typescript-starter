@@ -1,30 +1,57 @@
 # serverless-typescript-starter
 Serverless framework with TypeScript starter kit
 
-`serverless-typescript-starter` include tools for development of AWS Lambda with TypeScript.  
-[serverless](https://serverless.com/), [serverless-webpack](https://github.com/elastic-coders/serverless-webpack) and [ts-loader](https://github.com/TypeStrong/ts-loader) are used to building and deployment.  
-[mocha](https://mochajs.org/), [power-assert](https://github.com/power-assert-js/power-assert), [espower-typescript](https://github.com/power-assert-js/espower-typescript) and [sinon](http://sinonjs.org/) are used to unit testing.  
+`serverless-typescript-starter` include tools for development of AWS Lambda with TypeScript.
+
+* AWS Lambda
+  * [Serverless Framework](https://serverless.com/)
+* TypeScript
+  * [serverless-webpack](https://github.com/elastic-coders/serverless-webpack)
+  * [webpack](https://webpack.github.io/)
+  * [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader) are used to building and deployment.
+* Testing
+  * [mocha](https://mochajs.org/)
+  * [power-assert](https://github.com/power-assert-js/power-assert)
+  * [espower-typescript](https://github.com/power-assert-js/espower-typescript)
+* Useful frameworks
+  * [node-lambda-utilities](https://github.com/AKIRA-MIYAKE/node-lambda-utilities)
+  * [laprox](https://github.com/AKIRA-MIYAKE/lamprox)
+
 
 # Usage
-## Clone and install npm libraries
+## Setup
+### Clone project
 
 ```
 $ git clone https://github.com/AKIRA-MIYAKE/serverless-typescript-starter.git
 $ cd serverless-typescript-starter
-$ npm install
 ```
 
-## Create new function with serverless
+### Prepare .env
 
 ```
-$ node_modules/.bin/serverless create --template aws-nodejs --path <yourService>
+$ cp .env.sample .env
 ```
 
-## Setup webpack
-Create webpack.config.js that configured ts-loader, on your service directory.  
-Add plugin definition to serverless.yml
+Update `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` with your own value.
+
+### Setup Docker image
 
 ```
-plugins:
-  - serverless-webpack
+$ ENV_FILE=.env docker-compose build
+```
+
+### npm install
+
+```
+$ ENV_FILE=.env docker-compose run --rm serverless npm install
+```
+
+## Develop
+See Serverless Framework documents and refer to `/src/services/sample`.
+
+When executing the command, use the container's bash.
+
+```
+$ ENV_FILE=.env docker-compose run --rm serverless bash
 ```

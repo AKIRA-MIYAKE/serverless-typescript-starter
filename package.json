@@ -1,39 +1,40 @@
 {
   "name": "serverless-typescript-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Serverless framework with TypeScript starter kit",
-  "main": "index.js",
   "scripts": {
-    "start": "cd sample && serverless webpack serve --host 0.0.0.0",
-    "test": "mocha --compilers ts:espower-typescript/guess ./test/**/*.ts"
+    "lint": "tslint 'src/**/*.ts{,x}'",
+    "test": "mocha --compilers ts:espower-typescript/guess test/**/*.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AKIRA-MIYAKE/serverless-typescript-starter.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "AKIRA-MIYAKE",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/AKIRA-MIYAKE/serverless-typescript-starter/issues"
   },
   "homepage": "https://github.com/AKIRA-MIYAKE/serverless-typescript-starter#readme",
   "devDependencies": {
-    "@types/aws-lambda": "0.0.4",
-    "@types/aws-sdk": "0.0.39",
-    "@types/mocha": "^2.2.32",
-    "@types/node": "^6.0.46",
+    "@types/aws-lambda": "0.0.16",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.26",
     "@types/power-assert": "^1.4.29",
-    "@types/sinon": "^1.16.31",
-    "espower-typescript": "^6.0.1",
-    "mocha": "^3.1.2",
-    "power-assert": "^1.4.1",
-    "serverless": "^1.0.3",
-    "serverless-webpack": "^1.0.0-rc.2",
-    "sinon": "^1.17.6",
-    "ts-loader": "^0.9.5",
-    "tslint": "^3.15.1",
-    "typescript": "^2.0.6"
+    "awesome-typescript-loader": "^3.2.3",
+    "espower-typescript": "^8.1.0",
+    "mocha": "^3.5.0",
+    "power-assert": "^1.4.4",
+    "serverless": "^1.21.0",
+    "serverless-webpack": "^2.2.2",
+    "tslint": "^5.7.0",
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "aws-sdk": "^2.106.0",
+    "lambda-utilities": "0.0.2",
+    "lamprox": "^0.11.0"
+  }
 }
