@@ -35,6 +35,6 @@
   "dependencies": {
     "aws-sdk": "^2.106.0",
     "lambda-utilities": "0.0.2",
-    "lamprox": "^0.11.0"
+    "lamprox": "^0.12.0"
   }
 }
