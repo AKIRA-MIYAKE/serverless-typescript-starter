@@ -2,7 +2,7 @@ version: '2'
 
 services:
   serverless:
-    build: ./dockerfiles/serverless
+    build: ./docker/serverless
     env_file:
       - ${ENV_FILE}
     volumes:
