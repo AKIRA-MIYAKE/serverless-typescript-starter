@@ -1,5 +1,3 @@
-import * as assert from 'power-assert'
-
 import { invokeHandler, generateMockCallback } from 'lambda-utilities'
 import { generateDummyAPIGatewayEvent } from 'lamprox'
 
@@ -9,30 +7,28 @@ describe('services/sample/handler', () => {
 
   describe('hello', () => {
 
-    it('Should return response.', done => {
+    it('Should return response.', async () => {
       const event = generateDummyAPIGatewayEvent()
       const callback = generateMockCallback((error, result) => {
         callback.once()
         const body = JSON.parse(result.body)
-        assert.equal(body.message, 'Hello, Lambda!!')
-        assert.ok(callback.verify())
-        done()
+        expect(body.message).toBe('Hello, Lambda!!')
+        expect(callback.verify()).toBe(true)
       })
 
-      invokeHandler(hello, { event, callback })
+      await invokeHandler(hello, { event, callback })
     })
 
-    it('Should return response when evnet include query string params.', done => {
+    it('Should return response when evnet include query string params.', async () => {
       const event = generateDummyAPIGatewayEvent({ queryStringParameters: { "name": "John Doe" }})
       const callback = generateMockCallback((error, result) => {
         callback.once()
         const body = JSON.parse(result.body)
-        assert.equal(body.message, 'Hello, John Doe!!')
-        assert.ok(callback.verify())
-        done()
+        expect(body.message).toBe('Hello, John Doe!!')
+        expect(callback.verify()).toBe(true)
       })
 
-      invokeHandler(hello, { event, callback })
+      await invokeHandler(hello, { event, callback })
     })
 
 
