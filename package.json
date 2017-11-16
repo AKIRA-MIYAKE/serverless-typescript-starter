@@ -1,10 +1,10 @@
 {
   "name": "serverless-typescript-starter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Serverless framework with TypeScript starter kit",
   "scripts": {
     "lint": "tslint 'src/**/*.ts{,x}'",
-    "test": "mocha --compilers ts:espower-typescript/guess \"test/**/*.ts\""
+    "test": "jest --config jestconfig.json"
   },
   "repository": {
     "type": "git",
@@ -19,22 +19,20 @@
   "homepage": "https://github.com/AKIRA-MIYAKE/serverless-typescript-starter#readme",
   "devDependencies": {
     "@types/aws-lambda": "0.0.16",
-    "@types/mocha": "^2.2.42",
+    "@types/jest": "^21.1.6",
     "@types/node": "^8.0.26",
-    "@types/power-assert": "^1.4.29",
     "awesome-typescript-loader": "^3.2.3",
-    "espower-typescript": "^8.1.0",
-    "mocha": "^3.5.0",
-    "power-assert": "^1.4.4",
-    "serverless": "^1.21.0",
-    "serverless-webpack": "^2.2.2",
+    "jest": "^21.2.1",
+    "serverless": "^1.24.1",
+    "serverless-webpack": "^4.0.0",
+    "ts-jest": "^21.2.2",
     "tslint": "^5.7.0",
-    "typescript": "^2.4.2",
-    "webpack": "^3.5.5"
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1"
   },
   "dependencies": {
-    "aws-sdk": "^2.106.0",
-    "lambda-utilities": "0.0.2",
-    "lamprox": "^0.12.1"
+    "aws-sdk": "^2.151.0",
+    "lambda-utilities": "0.0.3",
+    "lamprox": "^0.14.0"
   }
 }
