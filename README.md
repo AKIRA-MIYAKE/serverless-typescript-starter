@@ -10,9 +10,7 @@ Serverless framework with TypeScript starter kit
   * [webpack](https://webpack.github.io/)
   * [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader) are used to building and deployment.
 * Testing
-  * [mocha](https://mochajs.org/)
-  * [power-assert](https://github.com/power-assert-js/power-assert)
-  * [espower-typescript](https://github.com/power-assert-js/espower-typescript)
+  * [jest](https://facebook.github.io/jest/)
 * Useful frameworks
   * [node-lambda-utilities](https://github.com/AKIRA-MIYAKE/node-lambda-utilities)
   * [laprox](https://github.com/AKIRA-MIYAKE/lamprox)
